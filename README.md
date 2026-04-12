@@ -1,12 +1,12 @@
-<!-- 个人资料仓库：将本文件放到 GitHub 仓库 A-night-owl-Rabbit/A-night-owl-Rabbit 的根目录（与用户名同名的公开仓库） -->
+# LikeNightRabbit
 
 ## 感谢赞助（爱发电）
 
 在此填写支持你的用户名称（可复制多行按需增删）。支持 Markdown 链接，例如链到对方 GitHub 或爱发电主页。
 
 - （在此填写赞助者名称或链接）
-- 
-- 
+-
+-
 
 [![爱发电](https://img.shields.io/badge/爱发电-支持作者-946ce6?style=for-the-badge)](https://afdian.net/a/请替换为你的爱发电用户名)
 
