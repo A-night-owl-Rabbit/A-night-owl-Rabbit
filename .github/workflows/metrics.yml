@@ -14,13 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
 
     steps:
+      - name: Metrics token notice
+        if: env.METRICS_TOKEN == ''
+        run: echo "::notice::Add a METRICS_TOKEN repository secret to generate the lowlighter metrics cards."
+
       - name: Languages
+        if: env.METRICS_TOKEN != ''
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.languages.indepth.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ env.METRICS_TOKEN }}
           base: ""
           plugin_languages: yes
           plugin_languages_ignored: html, css
@@ -32,10 +39,11 @@ jobs:
           plugin_languages_analysis_timeout: 30
 
       - name: Followup
+        if: env.METRICS_TOKEN != ''
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.followup.indepth.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ env.METRICS_TOKEN }}
           base: ""
           plugin_followup: yes
           plugin_followup_indepth: yes
@@ -43,37 +51,41 @@ jobs:
           plugin_followup_sections: user
 
       - name: Pinned Repositories
+        if: env.METRICS_TOKEN != ''
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.repositories.pinned.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ env.METRICS_TOKEN }}
           base: ""
           plugin_repositories: yes
           plugin_repositories_pinned: 6
 
       - name: Stars
+        if: env.METRICS_TOKEN != ''
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.stars.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ env.METRICS_TOKEN }}
           base: ""
           plugin_stars: yes
           plugin_stars_limit: 3
 
       - name: Isometric Calendar
+        if: env.METRICS_TOKEN != ''
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.isocalendar.fullyear.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ env.METRICS_TOKEN }}
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
 
       - name: Calendar
+        if: env.METRICS_TOKEN != ''
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.calendar.full.svg
-          token: ${{ secrets.METRICS_TOKEN }}
+          token: ${{ env.METRICS_TOKEN }}
           base: ""
           plugin_calendar: yes
           plugin_calendar_limit: 2
