@@ -6,7 +6,7 @@
 - cuniq
 - lxc
 
-[![爱发电](https://img.shields.io/badge/爱发电-支持作者-946ce6?style=for-the-badge)](https://afdian.net/a/0923A)
+[![爱发电](https://img.shields.io/badge/爱发电-支持作者-946ce6?style=for-the-badge)](https://ifdian.net/a/0923A)
 
 ---
 
