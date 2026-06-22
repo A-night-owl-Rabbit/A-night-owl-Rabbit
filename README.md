@@ -14,4 +14,35 @@
 
 ![banner](https://readme-typing-svg.herokuapp.com?font=Segoe+Script&center=true&lines=LikeNightRabbit.;Hello%2C+GitHub!)
 
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=A-night-owl-Rabbit&show_icons=true&theme=tokyonight)](https://github.com/A-night-owl-Rabbit)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./profile/stats-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./profile/stats-light.svg" />
+  <img alt="GitHub Stats" src="./profile/stats-light.svg" />
+</picture>
+
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./metrics.followup.indepth.svg" alt="Followup">
+    </td>
+    <td width="50%" valign="top">
+      <img src="./metrics.languages.indepth.svg" alt="Languages">
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img src="./metrics.repositories.pinned.svg" alt="Pinned Repositories">
+    </td>
+    <td valign="top">
+      <img src="./metrics.stars.svg" alt="Stars">
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img src="./metrics.isocalendar.fullyear.svg" alt="Isometric Calendar">
+    </td>
+    <td valign="top">
+      <img src="./metrics.calendar.full.svg" alt="Calendar">
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,109 @@
+name: Metrics & Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Languages
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.languages.indepth.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css
+          plugin_languages_indepth: yes
+          commits_authoring: ${{ github.repository_owner }}
+          plugin_languages_details: lines, percentage
+          plugin_languages_limit: 8
+          repositories_forks: yes
+          plugin_languages_analysis_timeout: 30
+
+      - name: Followup
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.followup.indepth.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_followup: yes
+          plugin_followup_indepth: yes
+          plugin_followup_archived: yes
+          plugin_followup_sections: user
+
+      - name: Pinned Repositories
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.repositories.pinned.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_pinned: 6
+
+      - name: Stars
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.stars.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_stars: yes
+          plugin_stars_limit: 3
+
+      - name: Isometric Calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.isocalendar.fullyear.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+
+      - name: Calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.calendar.full.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_calendar: yes
+          plugin_calendar_limit: 2
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+
+      - name: Stats Card (Light)
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=transparent&include_all_commits=true&hide_border=true
+          path: profile/stats-light.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Stats Card (Dark)
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&theme=ocean_dark&include_all_commits=true&hide_border=true
+          path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit Stats Cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git diff --cached --quiet && echo "No changes, skipping commit." || git commit -m "chore: update github-readme-stats cards"
+          git push
