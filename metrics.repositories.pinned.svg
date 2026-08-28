@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="506" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="576" class="">
     <defs>
         <style/>
     </defs>
@@ -27,7 +27,7 @@
                                         <span>created Mar 07 2026</span>
                                     </div>
                                 </div>
-                                <div class="field description">???? - my-neuro live-2d ????????</div>
+                                <div class="field description">洛基之影 - my-neuro live-2d 游戏陪玩插件:自动检测游戏窗口、检索内置攻略库,多来源攻略下载,支持截图分析与防剧透引导</div>
                                 <div class="field infos">
                                     <div class="language">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -121,7 +121,7 @@
                                         <span>created Mar 14 2026</span>
                                     </div>
                                 </div>
-                                <div class="field description">App Launcher FC tool for my-neuro - ? AI ???? Windows ????</div>
+                                <div class="field description">App Launcher FC tool for my-neuro - 让 AI 一句话启动 Windows 应用(旧版 server-tools 形态,新版见 my-neuro-plugin-windows-app-launcher)</div>
                                 <div class="field infos">
                                     <div class="language">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -168,7 +168,7 @@
                                         <span>created Mar 07 2026</span>
                                     </div>
                                 </div>
-                                <div class="field description">Bilibili MCP ??? - my-neuro live-2d B???????????????</div>
+                                <div class="field description">B站也逃脱不了肥牛大人的魔爪 - my-neuro B 站插件(bilibili-tools):搜索/评论/弹幕/排行榜/三连,视频综合信息含字幕提取、Whisper 转录与 AI 总结</div>
                                 <div class="field infos">
                                     <div class="language">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
